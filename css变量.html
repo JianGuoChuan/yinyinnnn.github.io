@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			:root{
+				--color:yellow;
+			}
+			.btn{
+				height: 100px;
+				
+			}
+			P{
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin-left: 50px;
+			}
+			p:nth-child(1){
+				background-color: yellow;
+			}
+			p:nth-child(2){
+				background-color: cadetblue;
+			}
+			p:nth-child(3){
+				background-color: purple;
+			}
+			.box{
+				margin-top: 100px;
+				width: 1000px;
+				height: 500px;
+				background-color: var(--color);
+			}
+			.text{
+				background-color: var(--color);
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			span{
+				background-color: var(--color);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		
+		<div class="box">
+			
+		</div>
+		<div class="text">
+			这是一段文字
+		</div>
+		<span>文字文字文字</span>
+	</body>
+</html>
+<script type="text/javascript">
+	let aP = document.querySelectorAll('p');
+	let html = document.querySelector(':root');
+	for(let i=0;i<aP.length;i++){
+		aP[i].onclick = function(){
+			let nowColor = getComputedStyle(this)['background-color'];
+			html.style.setProperty('--color',nowColor);
+		}
+	}
+</script>
